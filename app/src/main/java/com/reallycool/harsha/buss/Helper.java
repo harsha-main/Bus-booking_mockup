@@ -28,9 +28,9 @@ public class Helper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         Log.e("Table", "Table Created");
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS "+busa+" (id INTEGER PRIMARY KEY, name TEXT, date TEXT)");
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS "+busb+" (id INTEGER PRIMARY KEY, name TEXT, date TEXT)");
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS "+busc+" (id INTEGER PRIMARY KEY, name TEXT, date TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS "+busa+" (i INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, name TEXT, date TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS "+busb+" (i INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, name TEXT, date TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS "+busc+" (i INTEGER PRIMARY KEY AUTOINCREMENT, id INTEGER, name TEXT, date TEXT)");
     }
 
     @Override
@@ -70,9 +70,9 @@ if(cursor!=null)cursor.moveToFirst();
         if (cursor.moveToFirst()) {
             do {
                 Seat contact = new Seat();
-                contact.id=(Integer.parseInt(cursor.getString(0)));
-                contact.name=(cursor.getString(1));
-                contact.date=(cursor.getString(2));
+                contact.id=(Integer.parseInt(cursor.getString(1)));
+                contact.name=(cursor.getString(2));
+                contact.date=(cursor.getString(3));
                 // Adding contact to list
                 contactList.add(contact);
             } while (cursor.moveToNext());

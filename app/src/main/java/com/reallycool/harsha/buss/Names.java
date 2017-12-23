@@ -22,7 +22,7 @@ public class Names extends Activity {
         Log.e(Dataclass.al.size() + "", " Yes");
         for(int i=0;i< Dataclass.al.size();i++ ) {
             tv [i]= new EditText(this);
-            tv[i].setHint("Enter Name");
+            tv[i].setHint("Enter Name "+i);
         linLayout.addView(tv[i]);
     }
           button = (Button) findViewById(R.id.button2);
