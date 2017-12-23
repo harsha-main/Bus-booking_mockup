@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+
+        <AutoCompleteTextView
+            android:id="@+id/from"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:hint="From"
+            android:inputType="text"
+            android:textSize="25dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/seats"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="55dp"
+        android:text="Search Buses" />
+
+    <AutoCompleteTextView
+        android:id="@+id/to"
+        android:layout_width="195dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/linearLayout"
+        android:hint="To"
+        android:inputType="text"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp"
+        android:text="Loading"
+        android:textSize="35dp" />
+
+    <Button
+        android:id="@+id/seats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:text="View Booked Seats"
+        android:textSize="10dp" />
+
+</RelativeLayout>
