@@ -30,7 +30,7 @@ public class Names extends Activity {
             @Override
             public void onClick(View view) {
                 for (TextView t : tv) {
-                    if (t.getText().equals("")) {
+                    if (t.getText().toString().equals("")) {//tostring required to make it make it a string
                         Toast.makeText(Names.this,"Enter All The Names",Toast.LENGTH_SHORT).show();
                         return;
                     }
