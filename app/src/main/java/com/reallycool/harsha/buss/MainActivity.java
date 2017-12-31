@@ -70,6 +70,8 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View v) {
+                
+                hideSoftKeyboard(MainActivity.this);
                 new DatePickerDialog(MainActivity.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
@@ -82,7 +84,12 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, Main2Activity.class);
         startActivity(intent);
     }
-
+public static void hideSoftKeyboard(Activity activity) {
+        InputMethodManager inputMethodManager =
+                (InputMethodManager) activity.getSystemService(
+                        Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
+    }
     private void updateLabel() {
         String myFormat = "MM/dd/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
